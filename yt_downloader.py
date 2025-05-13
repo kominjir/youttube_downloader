@@ -7,7 +7,6 @@ import os
 from art import *
 from pytube import YouTube
 from pytube import Playlist 
-
 from tkinter import messagebox
 
 def browse_folder():
@@ -29,7 +28,7 @@ rb4 = ttk.Radiobutton(root, text='video playlist', variable=download_var, value=
 frame_link = tk.Frame(root)
 frame_link.grid(padx=10, pady=10)
 frame_link.pack()
-""" Definuju základní prvky a rozložení. Naskládají se dle pořadí zavolání metody pack."""
+""" Definuju základní prvky a rozložení. Naskládají se dle pořadí zavolání metody pack.  toto ale nějhak nefunguje"""
 
 vyber_typ = tk.Frame(root)
 vyber_typ.pack()
@@ -68,17 +67,6 @@ def download():
             os.rename(out_file, new_file)
             files_downloaded.set(files_downloaded.get() + 1)
 
-       
-
-
-
-
-
-
-
-
-
-
     elif download_var.get()==3:
         link = entry_link.get()
         folder = entry_folder.get()
@@ -97,15 +85,6 @@ def download():
             out_file= music.download(folder)
             files_downloaded.set(files_downloaded.get() + 1)
             
-
-
-
-
-
-
-
-
-
 label_link = tk.Label(frame_link, text="Vlož youtube odkaz:")
 label_link.pack(pady= 10)
 label_link.pack(side="left")
